@@ -1,0 +1,37 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div class="container">
+  <div class="row">
+    <h1>
+      {{titre}}
+    </h1>
+    <div style="text-align:left">
+      <ul class="list-group">
+        <app-post
+          *ngFor="let post of listPost"
+          [title]="post.title"
+          [content]="post.content"
+          [id]="post.id"
+        >
+        </app-post>
+      </ul>
+      TITRE :
+      <input type="text" class="form-control" [(ngModel)]="titreAjout" />
+      <br />
+      CONTENU :
+      <input
+        type="text"
+        class="form-control"
+        size="50"
+        [(ngModel)]="contenuAjout"
+      />
+      <button (click)="onAjout()">
+        Ajouter
+      </button>
+    </div>
+
+    <button (click)="onToutSupp()">
+      Tout Supprimer
+    </button>
+  </div>
+</div>

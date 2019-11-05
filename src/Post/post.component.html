@@ -1,0 +1,22 @@
+<div
+  [ngClass]="{'list-group-item': true,
+                'list-group-item-success': loveIts >= 0,
+                'list-group-item-danger': loveIts < 0 }"
+  [ngStyle]="{'background-color': getColor()}"
+>
+  <div class="row">
+    <div class="row">
+      <div class="column"><h2>{{title}}</h2></div>
+      <div class="column">{{created_at | date : 'EEEE dd/MM/y hh:mm'}}</div>
+    </div>
+    <p>{{content}}</p>
+
+    <div class="column">
+      <button class="btn btn-success" (click)="onLike()">Like</button>
+      {{getLI()}}
+      <button class="btn btn-unsuccess" (click)="onDislike()">Dislike</button>
+    </div>
+
+    <button class="btn btn-unsuccess" (click)="onSupp();">Supp</button>
+  </div>
+</div>
